@@ -1,13 +1,17 @@
+// Importing the express module
 const express = require('express');
+
+// Creating an Express application instance
 const app = express();
 
-// Import routes
+// Importing routes
 const characterRouter = require('./routes/character');
 
-// Middleware
+// Middleware to parse incoming JSON data
 app.use(express.json());
 
-// Routes
+// Defining routes
 app.use('/characters', characterRouter);
 
+// Exporting the Express application instance
 module.exports = app;
